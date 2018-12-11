@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        question:
+          attributes:
+            answers:
+              in_range_one_to_four: должны быть в количестве от 1 до 4
