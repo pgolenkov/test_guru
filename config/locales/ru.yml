@@ -2,7 +2,8 @@ ru:
   activerecord:
     errors:
       models:
-        question:
+        answer:
           attributes:
-            answers:
-              in_range_one_to_four: должны быть в количестве от 1 до 4
+            base:
+              cannot_take_last_answer: Нельзя оставить вопрос без ответов
+              invalid_count_in_one_answer: В вопросе должно быть от 1 до 4 ответов
