@@ -11,7 +11,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_count_in_one_question
-    count_in_question_current = (question.answers.reload + [self]).uniq.size
-    errors.add(:base, :invalid_count_in_one_answer) if count_in_question_current > MAX_COUNT
+    errors.add(:base, :invalid_count_in_one_answer) if question.answers.count >= MAX_COUNT
   end
 end
