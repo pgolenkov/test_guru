@@ -48,7 +48,7 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_not_found(e)
-    render plain: e.message
+    render plain: e.message, status: :not_found
   end
 
   def question_params
