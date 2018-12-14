@@ -1,0 +1,6 @@
+<h1>Список тестов</h1>
+<% @tests.each do |test| %>
+  <div>
+    <%= link_to test.title, test_questions_path(test) %>
+  </div>
+<% end %>
