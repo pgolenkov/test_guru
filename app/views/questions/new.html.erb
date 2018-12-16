@@ -1,0 +1,5 @@
+<h1>Создание нового вопроса теста <%= @test.title %></h1>
+<%= form_for [@test, @question] do |f| %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
