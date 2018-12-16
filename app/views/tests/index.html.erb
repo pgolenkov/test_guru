@@ -1,6 +1,13 @@
+<div>
+  <%= link_to 'На главную', '/' %>
+</div>
+
 <h1>Список тестов</h1>
-<% @tests.each do |test| %>
-  <div>
-    <%= link_to test.title, test_questions_path(test) %>
-  </div>
-<% end %>
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Кол-во вопросов</th>
+    <th>Действия</th>
+  </tr>
+  <%= render @tests %>
+</table>  

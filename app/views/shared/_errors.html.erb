@@ -1,0 +1,9 @@
+<% if resource.errors.present? %>
+  <div>
+    <%= pluralize(resource.errors.count, 'ошибка') %>
+  </div>
+
+  <% resource.errors.full_messages.each do |msg| %>
+    <div><%= msg %></div>
+  <% end %>
+<% end %>

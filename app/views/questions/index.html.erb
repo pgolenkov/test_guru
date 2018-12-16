@@ -1,17 +1,15 @@
-<% flash.each do |type, msg| %>
-  <div class="<%= type %>"><%= msg %></div> 
-<% end %>
+<div>
+  <%= link_to 'К списку тестов', tests_path %>
+</div>
 
 <h1>Список вопросов теста <%= @test.title %></h1>
-<% @questions.each do |question| %>
-  <div>
-    <%= question.body %>
-  </div>
-  <div>
-    <%= link_to 'Показать', question %>
-    <%= link_to 'Удалить', question, method: :delete, data: { confirm: 'Подтвердите удаление' } %>
-  </div>
-<% end %>
+<table>
+  <tr>
+    <th>Тело вопроса</th>
+    <th colpan="3">Действия</th>
+  </tr>
+  <%= render @questions %>
+</table> 
 
 <h3>
   <%= link_to 'Создать новый вопрос', new_test_question_path(@test) %>
