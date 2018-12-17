@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   def index
-    @tests = Test.select(:id, :title, 'COUNT(test_id) as count').joins(:questions).group(:test_id)
+    @tests = Test.all
   end
 
   def show
