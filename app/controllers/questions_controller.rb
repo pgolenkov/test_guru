@@ -15,7 +15,6 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.build
-    render :edit
   end
 
   def edit
@@ -27,7 +26,7 @@ class QuestionsController < ApplicationController
       flash[:success] = "Вопрос успешно создан!"
       redirect_to @question
     else
-      render :edit
+      render :new
     end
   end
 
