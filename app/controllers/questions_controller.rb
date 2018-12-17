@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: [:index, :new, :create]
-  before_action :find_question, only: [:show, :destroy]
+  before_action :find_question, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound do |e|
     rescue_with_not_found(e)
@@ -11,28 +11,39 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render plain: @question.body
   end
 
   def new
     @question = @test.questions.build
   end
 
+  def edit
+  end
+
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      flash[:success] = "Question #{@question.body} created"
+      flash[:success] = "Вопрос успешно создан!"
+      redirect_to @question
     else
-      flash[:error] = "Question create errors: #{@question.errors.full_messages.join(';')}"
+      render :new
     end
-    redirect_to test_questions_path(@test)
+  end
+
+  def update
+    if @question.update(question_params)
+      flash[:success] = "Вопрос успешно обновлен!"
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
     if @question.destroy
-      flash[:success] = "Question #{@question.body} destroyed"
+      flash[:success] = "Вопрос #{@question.body} был удалён"
     else
-      flash[:error] = "Question #{@question.body} has not been destroyed"
+      flash[:error] = "Произошла ошибка при удалении вопроса #{@question.body}"
     end
     redirect_to test_questions_path(@question.test)
   end
