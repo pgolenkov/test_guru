@@ -4,4 +4,5 @@
   <td><%= link_to 'Показать', test %></td>
   <td><%= link_to 'Изменить', edit_test_path(test) %></td>
   <td><%= link_to 'Удалить', test, method: :delete, data: { confirm: 'Подтвердите удаление' } %></td>
+  <td><%= button_to 'Начать', start_test_path(test) %></td>
 </tr>

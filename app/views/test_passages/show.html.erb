@@ -1,0 +1,24 @@
+<div>
+  <%= link_to 'К списку тестов', tests_path %>
+</div>
+
+<h1>
+  Тест <%= @test_passage.test.title %>
+</h1>
+<div>
+  <p>
+    <b>Вопрос:</b><%= @test_passage.current_question.body %>
+  <p>
+    Варианты ответов:
+</div>
+
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |f| %>
+  <%= f.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object_id}" %>
+      <%= b.label %>
+  <% end %>
+  <p>
+    <%= f.submit 'Next' %>
+<% end %>
+

@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def tests_by_level(level)
     tests.by_level(level)
   end
+
+  def test_passage(test)
+    test_passages.where(test: test).last
+  end
 end
