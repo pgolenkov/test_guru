@@ -2,7 +2,7 @@
   <%= link_to 'К списку тестов', tests_path %>
 </div>
 
-<h1><%= test_header(@test) %></h1>
+<h1><%= resource_header(@test) %></h1>
 
 <%= render 'shared/errors', resource: @test %>
 

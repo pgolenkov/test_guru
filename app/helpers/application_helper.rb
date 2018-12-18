@@ -6,4 +6,12 @@ module ApplicationHelper
   def github_url(author, repo)
     link_to repo.classify, "https://github.com/#{author}/#{repo}", target: '_blank'
   end
+
+  def resource_header(resource)
+    if resource.new_record?
+      "Create New #{resource.class}"
+    else
+      "Edit #{resource.class}"
+    end
+  end
 end

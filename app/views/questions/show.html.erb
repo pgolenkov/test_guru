@@ -2,10 +2,22 @@
   <%= link_to 'К списку вопросов теста', @question.test %>
 </div>
 
-<h1>Страница вопроса</h1>
+<h1>Вопрос теста <%= @question.test.title %></h1>
 <div>
   <p>
-    Тест: <%= @question.test.title %>
-  <p>
-    Вопрос: <%= @question.body %>
+    <%= @question.body %>
 </div>
+
+<h2>Список ответов</h2>
+<table>
+  <tr>
+    <th>Ответ</th>
+    <th>Верный?</th>
+    <th colpan="2">Действия</th>
+  </tr>
+  <%= render @question.answers %>
+</table> 
+
+<h3>
+  <%= link_to 'Создать новый ответ', new_question_answer_path(@question) %>
+</h3>
