@@ -1,10 +1,11 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_LIMIT = 85.freeze
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_current_question, on: :create
-  before_validation :before_validation_set_next_question, on: :update
+  before_validation :before_validation_set_current_question
 
   def completed?
     current_question.nil?
@@ -21,14 +22,14 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count * 100).to_i
   end
 
+  def success?
+    success_percent >= SUCCESS_LIMIT
+  end
+
   private
 
   def before_validation_set_current_question
-    self.current_question = test.questions.first
-  end
-
-  def before_validation_set_next_question
-    self.current_question = next_question
+    self.current_question = new_record? ? test.questions.first : next_question
   end
 
   def correct_answers?(answer_ids)
