@@ -2,5 +2,6 @@
   <td><%= test.title %></td>
   <td><%= test.questions.count %></td>
   <td><%= link_to 'Показать', test %></td>
+  <td><%= link_to 'Изменить', edit_test_path(test) %></td>
+  <td><%= link_to 'Удалить', test, method: :delete, data: { confirm: 'Подтвердите удаление' } %></td>
 </tr>
-
