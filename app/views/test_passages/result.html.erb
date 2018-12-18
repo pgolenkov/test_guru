@@ -3,3 +3,13 @@
 </div>
 
 <h1>Тест <%= @test_passage.test.title %> завершен! </h1>
+
+<h2 class="test_passage_result">
+  <% if @success_percent >= 85 %>
+    Тест успешно пройден. Процент успеха <span class="success"><%= @success_percent %>%</span>
+  <% else %>
+    Тест не пройден. Процент успеха <span class="fail"><%= @success_percent %>%</span>
+  <% end %>
+</h2>
+
+

@@ -7,7 +7,11 @@
 </h1>
 <div>
   <p>
-    <b>Вопрос:</b><%= @test_passage.current_question.body %>
+    <b><%= @test_passage.current_question.number %> 
+    Вопрос из
+    <%= @test_passage.test.questions.count %>:</b>
+ 
+    <%= @test_passage.current_question.body %>
   <p>
     Варианты ответов:
 </div>
