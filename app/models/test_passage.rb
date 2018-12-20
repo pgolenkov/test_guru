@@ -33,7 +33,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answers?(answer_ids)
-    current_question.answers.correct.ids.sort == answer_ids.sort
+    current_question.answers.correct.order(:id).ids == answer_ids.sort
   end
 
   def next_question

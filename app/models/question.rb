@@ -5,6 +5,6 @@ class Question < ApplicationRecord
   validates :body, presence: true
 
   def number
-    test.questions.ids.sort.index(id) + 1
+    test.questions.order(:id).ids.index(id) + 1
   end
 end
