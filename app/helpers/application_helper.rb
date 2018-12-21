@@ -14,4 +14,10 @@ module ApplicationHelper
       "Edit #{resource.class}"
     end
   end
+
+  def flash_messages
+    flash.map do |type, msg|
+      content_tag :div, msg, class: "flash #{type}"
+    end.join(' ').html_safe
+  end
 end
