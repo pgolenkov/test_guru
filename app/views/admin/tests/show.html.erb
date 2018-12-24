@@ -1,5 +1,5 @@
 <div>
-  <%= link_to 'К списку тестов', tests_path %>
+  <%= link_to 'К списку тестов', admin_tests_path %>
 </div>
 
 <h1>Тест <%= @test.title %></h1>
@@ -20,5 +20,5 @@
 </table> 
 
 <h3>
-  <%= link_to 'Создать новый вопрос', new_test_question_path(@test) %>
+  <%= link_to 'Создать новый вопрос', new_admin_test_question_path(@test) %>
 </h3>

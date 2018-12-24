@@ -1,0 +1,15 @@
+<tr>
+  <td>
+    <%= answer.body %>
+  </td>
+  <td>
+    <%= answer.correct? ? 'Да' : 'Нет' %>
+  </td>
+  <td>
+    <%= link_to 'Изменить', edit_admin_answer_path(answer) %>
+  </td>
+  <td>
+    <%= link_to 'Удалить', [:admin, answer], method: :delete, data: { confirm: 'Подтвердите удаление' } %>
+  </td>
+</tr>
+
