@@ -17,6 +17,7 @@ class Admin::TestsController < Admin::ApplicationController
 
   def create
     @test = Test.new(test_params)
+    @test.owner = current_user
     if @test.save
       redirect_to [:admin, @test], notice: 'Тест успешно создан!'
     else
