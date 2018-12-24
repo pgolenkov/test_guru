@@ -1,0 +1,17 @@
+.nav {
+  &.user {
+    padding-bottom: 10px;
+  }
+}
+
+.flash {
+  margin: 10px 0;
+
+  &.alert {
+    color: red;
+  }
+  &.notice {
+    color: green;
+  }
+}
+
