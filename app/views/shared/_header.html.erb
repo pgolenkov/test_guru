@@ -1,6 +1,6 @@
 <div class="nav user">
   <%= link_to 'TestGuru', root_path %> |
-  <% if logged_in? %>
+  <% if user_signed_in? %>
     Welcome <%= current_user.name %> Guru |
     <%= link_to 'Выход', logout_path, method: :delete, data: { confirm: 'Вы действительно хотите выйти?' } %>
   <% else %>

@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
   root to: 'tests#index'
 
-  get '/signup', to: 'users#new'
-  get '/login', to: 'sessions#new'
-  delete 'logout', to: 'sessions#destroy'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+
+  devise_scope :user do
+    get 'login', to: 'devise/sessions#new'
+    delete 'logout', to: 'devise/sessions#destroy'
+    get 'signup', to: 'devise/registrations#new'
+  end
 
   resources :users, only: :create
   resources :sessions, only: :create
