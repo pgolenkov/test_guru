@@ -25,4 +25,8 @@ class User < ApplicationRecord
   def name
     [first_name, last_name].join(' ')
   end
+
+  def admin?
+    is_a?(Admin)
+  end
 end

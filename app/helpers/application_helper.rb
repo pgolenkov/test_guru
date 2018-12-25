@@ -20,4 +20,8 @@ module ApplicationHelper
       content_tag :div, msg, class: "flash #{type}"
     end.join(' ').html_safe
   end
+
+  def boolean_title(value)
+    value ? 'Да' : 'Нет'
+  end
 end
