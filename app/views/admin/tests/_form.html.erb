@@ -1,0 +1,17 @@
+<div>
+  <%= link_to 'К списку тестов', admin_tests_path %>
+</div>
+
+<h1><%= resource_header(@test) %></h1>
+
+<%= render 'shared/errors', resource: @test %>
+
+<%= form_with model: [:admin, @test], local: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, id: :test_title %>
+  <%= f.label :level %>
+  <%= f.number_field :level, id: :test_level %>
+  <%= f.label :category_id %>
+  <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true, id: :test_category_id %>
+  <%= f.submit %>
+<% end %>

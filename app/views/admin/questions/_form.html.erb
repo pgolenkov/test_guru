@@ -1,0 +1,13 @@
+<div>
+  <%= link_to 'К списку вопросов теста', [:admin, @test || @question.test] %>
+</div>
+
+<h1><%= question_header(@question) %></h1>
+
+<%= render 'shared/errors', resource: @question %>
+
+<%= form_with model: [:admin, @test, @question], local: true do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body, id: :question_body %>
+  <%= f.submit %>
+<% end %>
