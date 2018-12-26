@@ -21,7 +21,7 @@ module ApplicationHelper
     end.join(' ').html_safe
   end
 
-  def boolean_title(value)
+  def boolean_to_human_string(value)
     value ? 'Да' : 'Нет'
   end
 end
