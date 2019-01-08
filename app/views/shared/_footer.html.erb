@@ -1,13 +1,12 @@
 <div>
   <p>
     <%= current_year %> |
-    Автор проекта: Павел Голенков |
+    <%= t(".author") %> |
     <%= github_url('pashex', 'test_guru') %>
   <p> 
-    Проект TestGuru позволяет проводить тестирование пользователей.  Система автоматически
-    проверяет правильность ответов и указывает на ошибки.
+    <%= t(".description") %>
   <p>
-    <%= link_to "Учебный проект в онлайн-школе Thinknetica",
+    <%= link_to t(".school_link"),
                 "http://www.thinknetica.com/",
                 target: "_blank" %>
 </div>

@@ -18,7 +18,7 @@ class Admin::TestsController < Admin::ApplicationController
   def create
     @test = current_user.own_tests.build(test_params)
     if @test.save
-      redirect_to [:admin, @test], notice: 'Тест успешно создан!'
+      redirect_to [:admin, @test], notice: t(".success", title: @test.title)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::TestsController < Admin::ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to [:admin, @test], notice: "Тест успешно обновлен!"
+      redirect_to [:admin, @test], notice: t(".success")
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Admin::TestsController < Admin::ApplicationController
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_path, notice: "Тест #{@test.title} был удалён"
+    redirect_to admin_tests_path, notice: t(".success", title: @test.title)
   end
 
   private

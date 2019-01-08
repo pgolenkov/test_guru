@@ -9,9 +9,9 @@ module ApplicationHelper
 
   def resource_header(resource)
     if resource.new_record?
-      "Create New #{resource.class}"
+      t("form.create_resource", resource: resource.model_name.human)
     else
-      "Edit #{resource.class}"
+      t("form.edit_resource", resource: resource.model_name.human)
     end
   end
 
@@ -22,6 +22,6 @@ module ApplicationHelper
   end
 
   def boolean_to_human_string(value)
-    value ? 'Да' : 'Нет'
+    value ? t("titles.yes_title") : t("titles.no_title")
   end
 end

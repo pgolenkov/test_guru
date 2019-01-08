@@ -1,23 +1,23 @@
 <div>
-  <%= link_to 'К списку вопросов теста', [:admin, @question.test] %>
+  <%= link_to t("titles.back"), [:admin, @question.test] %>
 </div>
 
-<h1>Вопрос теста <%= @question.test.title %></h1>
+<h1><%= t(".title", test_title: @question.test.title) %></h1>
 <div>
   <p>
     <%= @question.body %>
 </div>
 
-<h2>Список ответов</h2>
+<h2><%= t(".answer_list") %></h2>
 <table>
   <tr>
-    <th>Ответ</th>
-    <th>Верный?</th>
-    <th colpan="2">Действия</th>
+    <th><%= Answer.human_attribute_name(:body) %></th>
+    <th><%= Answer.human_attribute_name(:correct) %></th>
+    <th colspan="2"><%= t("titles.actions") %></th>
   </tr>
   <%= render @question.answers %>
 </table> 
 
 <h3>
-  <%= link_to 'Создать новый ответ', new_admin_question_answer_path(@question) %>
+  <%= link_to t("titles.create", resource: Answer.model_name.human), new_admin_question_answer_path(@question) %>
 </h3>

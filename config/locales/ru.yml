@@ -1,9 +1,130 @@
 ru:
+  titles:
+    show: "Показать"
+    edit: "Изменить"
+    delete: "Удалить"
+    create: "Создать %{resource}"
+    actions: "Действия"
+    confirm_deletion: "Вы действительно хотите удалить эту запись?"
+    yes_title: "Да"
+    no_title: "Нет"
+    back: "Назад"
+    exit: "Выход"
+    enter: "Вход"
+    register: "Регистрация"
+    confirm_exit: "Вы действительно хотите выйти?"
+    
+  form:
+    create_resource: "Создать %{resource}"
+    edit_resource: "Изменить %{resource}"
+    create_question: "Создать вопрос теста: %{title}"
+    edit_question: "Изменить вопрос теста: %{title}"
+
   activerecord:
+    models:
+      test: "тест"
+      question: "вопрос"
+      answer: "ответ"
+      user: "пользователь"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Текст"
+      answer:
+        body: "Текст"
+        correct: "Верный"
+      user:
+        email: "Эл. почта"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+
     errors:
       models:
         answer:
           attributes:
             base:
-              cannot_take_last_answer: Нельзя оставить вопрос без ответов
-              invalid_count_in_one_answer: В вопросе должно быть от 1 до 4 ответов
+              cannot_take_last_answer: "Нельзя оставить вопрос без ответов"
+              invalid_count_in_one_answer: "В вопросе должно быть от 1 до 4 ответов"
+  admin:
+    answers:
+      create:
+        success: "Ответ %{body} успешно создан!"
+      update:
+        success: "Ответ успешно обновлен!"
+      destroy:
+        success: "Ответ %{body} был удалён"
+    questions:
+      create:
+        success: "Вопрос %{body} успешно создан!"
+      update:
+        success: "Вопрос успешно обновлен!"
+      destroy:
+        success: "Вопрос %{body} был удалён"
+      show:
+        title: "Вопрос теста %{test_title}"
+        answer_list: "Список ответов"
+
+    tests:
+      create:
+        success: "Тест %{title} успешно создан!"
+      update:
+        success: "Тест успешно обновлен!"
+      destroy:
+        success: "Тест %{title} был удалён"
+      index:
+        title: "Список тестов"
+        questions_count: "Количество вопросов"
+      show:
+        title: "Тест %{test_title}"
+        question_list: "Список вопросов"
+
+    header:
+      title: "Панель администратора"
+      main_link: "Админ TestGuru"
+      welcome: "Добро пожаловать, администратор %{name}!"
+
+  users:
+    sessions:
+      create:
+        success: "Привет, %{name}!"
+
+  tests:
+    test:
+      start: "Начать"
+    index:
+      title: "Список тестов"
+      questions_count: "Количество вопросов"
+
+  test_passages:
+    result:
+      title: "Тест %{test_title} завершен!"
+      success: "Тест успешно пройден. Процент успеха"
+      fail: "Тест не пройден. Процент успеха"
+    show:
+      title: "Тест %{test_title}"
+      question_from: "Вопрос из"
+      answer_variants: "Варианты ответов:"
+      next: "Следующий вопрос"
+  
+  shared:
+    errors:
+      title:
+        one: "%{count} ошибка"
+        few: "%{count} ошибки"
+        many: "%{count} ошибок"
+        other: "%{count} ошибок"
+    header:
+      main_link: "TestGuru"
+      welcome: "Добро пожаловать, гуру %{name}!"
+
+    footer:
+      author: "Автор проекта: Павел Голенков"
+      description: "Проект TestGuru позволяет проводить тестирование пользователей.  Система автоматически проверяет правильность ответов и указывает на ошибки."
+      school_link: "Учебный проект в онлайн-школе Thinknetica"

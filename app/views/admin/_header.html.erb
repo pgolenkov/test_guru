@@ -1,6 +1,6 @@
 <div class="nav-admin user">
-  Administrator Panel |
-  <%= link_to 'Admin TestGuru', admin_tests_path %> |
-  Welcome <%= current_user.name %> Admin |
-  <%= link_to 'Выход', logout_path, method: :delete, data: { confirm: 'Вы действительно хотите выйти?' } %>
+  <%= t(".title") %> |
+  <%= link_to t(".main_link"), admin_tests_path %> |
+  <%= t(".welcome", name: current_user.name) %> |
+  <%= link_to t("titles.exit"), logout_path, method: :delete, data: { confirm: t("titles.confirm_exit") } %>
 </div>

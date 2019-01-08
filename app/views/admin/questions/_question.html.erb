@@ -3,13 +3,13 @@
     <%= question.body %>
   </td>
   <td>
-    <%= link_to 'Показать', [:admin, question] %>
+    <%= link_to t("titles.show"), [:admin, question] %>
   </td>
   <td>
-    <%= link_to 'Изменить', edit_admin_question_path(question) %>
+    <%= link_to t("titles.edit"), edit_admin_question_path(question) %>
   </td>
   <td>
-    <%= link_to 'Удалить', [:admin, question], method: :delete, data: { confirm: 'Подтвердите удаление' } %>
+    <%= link_to t("titles.delete"), [:admin, question], method: :delete, data: { confirm: t("titles.confirm_deletion") } %>
   </td>
 </tr>
 

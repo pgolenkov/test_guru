@@ -1,5 +1,5 @@
 <div>
-  <%= link_to 'К списку вопросов теста', [:admin, @test || @question.test] %>
+  <%= link_to t("titles.back"), [:admin, @test || @question.test] %>
 </div>
 
 <h1><%= question_header(@question) %></h1>

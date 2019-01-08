@@ -1,24 +1,24 @@
 <div>
-  <%= link_to 'К списку тестов', admin_tests_path %>
+  <%= link_to t("titles.back"), admin_tests_path %>
 </div>
 
-<h1>Тест <%= @test.title %></h1>
+<h1><%= t(".title", test_title: @test.title) %></h1>
 <div>
   <p>
-    Уровень: <%= @test.level %>
+    <%= Test.human_attribute_name(:level) %>: <%= @test.level %>
   <p>
-    Категория: <%= @test.category.title %>
+    <%= Test.human_attribute_name(:category_id) %>: <%= @test.category.title %>
 </div>
 
-<h2>Список вопросов</h2>
+<h2><%= t(".question_list") %></h2>
 <table>
   <tr>
-    <th>Тело вопроса</th>
-    <th colpan="3">Действия</th>
+    <th><%= Question.human_attribute_name(:body) %></th>
+    <th colspan="3"><%= t("titles.actions") %></th>
   </tr>
   <%= render @test.questions %>
 </table> 
 
 <h3>
-  <%= link_to 'Создать новый вопрос', new_admin_test_question_path(@test) %>
+  <%= link_to t("titles.create", resource: Question.model_name.human), new_admin_test_question_path(@test) %>
 </h3>

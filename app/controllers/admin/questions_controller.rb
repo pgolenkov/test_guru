@@ -15,7 +15,7 @@ class Admin::QuestionsController < Admin::ApplicationController
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to [:admin, @question], notice: 'Вопрос успешно создан!'
+      redirect_to [:admin, @question], notice: t(".success", body: @question.body)
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Admin::QuestionsController < Admin::ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to [:admin, @question], notice: "Вопрос успешно обновлен!"
+      redirect_to [:admin, @question], notice: t(".success")
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Admin::QuestionsController < Admin::ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to [:admin, @question.test], notice: "Вопрос #{@question.body} был удалён"
+    redirect_to [:admin, @question.test], notice: t(".success", body: @question.body)
   end
 
   private

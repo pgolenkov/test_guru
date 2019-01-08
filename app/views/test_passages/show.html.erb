@@ -1,19 +1,19 @@
 <div>
-  <%= link_to 'К списку тестов', tests_path %>
+  <%= link_to t("titles.back"), tests_path %>
 </div>
 
 <h1>
-  Тест <%= @test_passage.test.title %>
+  <%= t(".title", test_title: @test_passage.test.title) %>
 </h1>
 <div>
   <p>
     <b><%= @test_passage.current_question.number %> 
-    Вопрос из
+    <%= t(".question_from") %>
     <%= @test_passage.test.questions.count %>:</b>
  
     <%= @test_passage.current_question.body %>
   <p>
-    Варианты ответов:
+    <%= t(".answer_variants") %>
 </div>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |f| %>
@@ -23,6 +23,6 @@
       <%= b.label %>
   <% end %>
   <p>
-    <%= f.submit 'Next' %>
+    <%= f.submit t(".next") %>
 <% end %>
 

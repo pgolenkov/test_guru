@@ -1,10 +1,10 @@
 <div class="nav user">
-  <%= link_to 'TestGuru', root_path %> |
+  <%= link_to t(".main_link"), root_path %> |
   <% if user_signed_in? %>
-    Welcome <%= current_user.name %> Guru |
-    <%= link_to 'Выход', logout_path, method: :delete, data: { confirm: 'Вы действительно хотите выйти?' } %>
+    <%= t(".welcome", name: current_user.name) %> |
+    <%= link_to t("titles.exit"), logout_path, method: :delete, data: { confirm: t("titles.confirm_exit") } %>
   <% else %>
-    <%= link_to 'Вход', login_path %> |
-    <%= link_to 'Регистрация', signup_path %>
+    <%= link_to t("titles.enter"), login_path %> |
+    <%= link_to t("titles.register"), signup_path %>
   <% end %>
 </div>
