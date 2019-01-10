@@ -1,9 +1,9 @@
-<h1>Список тестов</h1>
+<h1><%= t(".title") %></h1>
 <table>
   <tr>
-    <th>Название</th>
-    <th>Кол-во вопросов</th>
-    <th>Действия</th>
+    <th><%= Test.human_attribute_name(:title) %></th>
+    <th><%= t(".questions_count") %></th>
+    <th><%= t("titles.actions") %></th>
   </tr>
   <%= render @tests %>
 </table>

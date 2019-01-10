@@ -12,7 +12,7 @@ class Admin::AnswersController < Admin::ApplicationController
   def create
     @answer = @question.answers.build(answer_params)
     if @answer.save
-      redirect_to [:admin, @question], notice: "Ответ #{@answer.body} успешно создан!"
+      redirect_to [:admin, @question], notice: t(".success", body: @answer.body)
     else
       render :new
     end
@@ -20,7 +20,7 @@ class Admin::AnswersController < Admin::ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to [:admin, @answer.question], notice: "Ответ успешно обновлен!"
+      redirect_to [:admin, @answer.question], notice: t(".success")
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class Admin::AnswersController < Admin::ApplicationController
 
   def destroy
     @answer.destroy
-    redirect_to [:admin, @answer.question], notice: "Ответ #{@answer.body} был удалён"
+    redirect_to [:admin, @answer.question], notice: t(".success", body: @answer.body)
   end
 
   private

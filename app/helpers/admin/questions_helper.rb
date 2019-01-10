@@ -1,9 +1,9 @@
 module Admin::QuestionsHelper
   def question_header(question)
     if question.new_record?
-      "Create New #{question.test.title} Question"
+      t("form.create_question", title: question.test.title)
     else
-      "Edit #{question.test.title} Question"
+      t("form.edit_question", title: question.test.title)
     end
   end
 end

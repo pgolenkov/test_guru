@@ -1,6 +1,6 @@
 <% if resource.errors.present? %>
   <div>
-    <%= pluralize(resource.errors.count, 'ошибка') %>
+    <%= t(".title", count: resource.errors.count) %>
   </div>
 
   <% resource.errors.full_messages.each do |msg| %>

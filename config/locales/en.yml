@@ -1,33 +1,130 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  titles:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    create: "Create %{resource}"
+    actions: "Actions"
+    confirm_deletion: "Are you sure to delete this record?"
+    yes_title: "Yes"
+    no_title: "No"
+    back: "Back"
+    exit: "Logout"
+    enter: "Login"
+    register: "Registration"
+    confirm_exit: "Are you sure to logout?"
+    
+  form:
+    create_resource: "Create %{resource}"
+    edit_resource: "Edit %{resource}"
+    create_question: "Create question for test: %{title}"
+    edit_question: "Edit question for test: %{title}"
+
+  activerecord:
+    models:
+      test: "test"
+      question: "question"
+      answer: "answer"
+      user: "user"
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Body"
+      answer:
+        body: "Body"
+        correct: "Correct"
+      user:
+        email: "Email"
+        first_name: "First name"
+        last_name: "Last name"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        remember_me: "Remember me"
+
+    errors:
+      models:
+        answer:
+          attributes:
+            base:
+              cannot_take_last_answer: "Question must have answers"
+              invalid_count_in_one_answer: "Question must have from 1 to 4 answers"
+  admin:
+    answers:
+      create:
+        success: "Answer %{body} was created!"
+      update:
+        success: "Answer was updated!"
+      destroy:
+        success: "Answer %{body} was destroyed"
+    questions:
+      create:
+        success: "Question %{body} was created!"
+      update:
+        success: "Question was updated!"
+      destroy:
+        success: "Question %{body} was destroyed"
+      show:
+        title: "Question for test %{test_title}"
+        answer_list: "Answers list"
+
+    tests:
+      create:
+        success: "Test %{title} was created!"
+      update:
+        success: "Test was updated!"
+      destroy:
+        success: "Test %{title} was destroyed"
+      index:
+        title: "Tests list"
+        questions_count: "Questions count"
+      show:
+        title: "Test %{test_title}"
+        question_list: "Questions list"
+
+    header:
+      title: "Administration panel"
+      main_link: "Аdmin TestGuru"
+      welcome: "Welcome, administrator %{name}!"
+
+  users:
+    sessions:
+      create:
+        success: "Hello, %{name}!"
+
+  tests:
+    test:
+      start: "Start"
+    index:
+      title: "Tests list"
+      questions_count: "Questions count"
+
+  test_passages:
+    result:
+      title: "Test %{test_title} completed!"
+      success: "Test completed successfully. Success percent"
+      fail: "Test failed. Success percent"
+    show:
+      title: "Test %{test_title}"
+      question_from: "Question from"
+      answer_variants: "Answer variants:"
+      next: "Next question"
+  
+  shared:
+    errors:
+      title:
+        one: "%{count} error"
+        other: "%{count} errors"
+
+
+    header:
+      main_link: "TestGuru"
+      welcome: "Welcome, guru %{name}!"
+
+    footer:
+      author: "Project author: Pavel Golenkov"
+      description: "The TestGuru project allows user testing. The system automatically checks the correctness of the answers and indicates errors."
+      school_link: "Study project at Thinknetica online school"
