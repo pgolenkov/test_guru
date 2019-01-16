@@ -1,5 +1,5 @@
-<tr>
-  <td><%= test.title %></td>
-  <td><%= test.questions.count %></td>
-  <td><%= button_to t(".start"), start_test_path(test) %></td>
-</tr>
+<div class="row mt-2 align-items-center">
+  <div class="col-6"><%= test.title %></div>
+  <div class="col-2 text-center"><%= test.questions.count %></div>
+  <div class="col-1 text-center"><%= button_to t(".start"), start_test_path(test), class: "btn btn-primary" %></div>
+</div>

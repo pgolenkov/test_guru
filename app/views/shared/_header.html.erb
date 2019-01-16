@@ -1,10 +1,31 @@
-<div class="nav user">
-  <%= link_to t(".main_link"), root_path %> |
-  <% if user_signed_in? %>
-    <%= t(".welcome", name: current_user.name) %> |
-    <%= link_to t("titles.exit"), logout_path, method: :delete, data: { confirm: t("titles.confirm_exit") } %>
-  <% else %>
-    <%= link_to t("titles.enter"), login_path %> |
-    <%= link_to t("titles.register"), signup_path %>
+<nav class="navbar <%= admin? ? 'navbar-dark bg-dark' : 'navbar-light bg-light' %>">
+  <%= link_to t(".main_link"), root_path, class: "navbar-brand" %>
+  
+  <% if admin? %>
+    <ul class="navbar-nav justify-content-start">
+      <li class="nav-item"> 
+        <%= link_to t(".admin_link"), admin_tests_path, class: "nav-link" %>
+      </li>
+    </ul>
   <% end %>
-</div>
+
+  <ul class="nav justify-content-end">
+    <% if user_signed_in? %>
+      <li class="nav-item"> 
+        <span class="navbar-text">
+          <%= t(".welcome", role: role(current_user), name: current_user.name) %>
+        </span>
+      </li>
+      <li class="nav-item"> 
+        <%= link_to t("titles.exit"), logout_path, method: :delete, data: { confirm: t("titles.confirm_exit") }, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to t("titles.enter"), login_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("titles.register"), signup_path, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
