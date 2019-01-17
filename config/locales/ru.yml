@@ -13,7 +13,8 @@ ru:
     enter: "Вход"
     register: "Регистрация"
     confirm_exit: "Вы действительно хотите выйти?"
-    
+    admin: "Админ"
+    guru: "Гуру"
   form:
     create_resource: "Создать %{resource}"
     edit_resource: "Изменить %{resource}"
@@ -85,11 +86,6 @@ ru:
         title: "Тест %{test_title}"
         question_list: "Список вопросов"
 
-    header:
-      title: "Панель администратора"
-      main_link: "Админ TestGuru"
-      welcome: "Добро пожаловать, администратор %{name}!"
-
   users:
     sessions:
       create:
@@ -122,7 +118,8 @@ ru:
         other: "%{count} ошибок"
     header:
       main_link: "TestGuru"
-      welcome: "Добро пожаловать, гуру %{name}!"
+      admin_link: "Панель администратора"
+      welcome: "Добро пожаловать, %{role} %{name}!"
 
     footer:
       author: "Автор проекта: Павел Голенков"

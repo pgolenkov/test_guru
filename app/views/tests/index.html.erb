@@ -1,9 +1,17 @@
-<h1><%= t(".title") %></h1>
-<table>
-  <tr>
-    <th><%= Test.human_attribute_name(:title) %></th>
-    <th><%= t(".questions_count") %></th>
-    <th><%= t("titles.actions") %></th>
-  </tr>
-  <%= render @tests %>
-</table>
+<div class="row text-center">
+  <div class="col">
+    <h1><%= t(".title") %></h1>
+  </div>
+</div>
+<div class="row font-weight-bold text-center align-items-center">
+  <div class="col-6">
+    <%= Test.human_attribute_name(:title) %>
+  </div>
+  <div class="col-2">  
+    <%= t(".questions_count") %>
+  </div>
+  <div class="col-1">
+    <%= t("titles.actions") %>
+  </div>
+</div>
+<%= render @tests %>

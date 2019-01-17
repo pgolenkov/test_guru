@@ -6,8 +6,14 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :authenticate_user!
 
+  helper_method :admin?
+
   def default_url_options
     I18n.locale == I18n.default_locale ? super : { lang: I18n.locale }
+  end
+
+  def admin?
+    current_user&.admin?
   end
 
   private

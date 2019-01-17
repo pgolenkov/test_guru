@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ALERT_CLASSES = { 'notice' => 'success', 'alert' => 'danger' }.freeze
+
   def current_year
     Time.current.year
   end
@@ -15,13 +17,15 @@ module ApplicationHelper
     end
   end
 
-  def flash_messages
-    flash.map do |type, msg|
-      content_tag :div, msg, class: "flash #{type}"
-    end.join(' ').html_safe
-  end
-
   def boolean_to_human_string(value)
     value ? t("titles.yes_title") : t("titles.no_title")
+  end
+
+  def role(user)
+    user.admin? ? t("titles.admin") : t("titles.guru")
+  end
+
+  def alert_class(type)
+    ALERT_CLASSES[type]
   end
 end

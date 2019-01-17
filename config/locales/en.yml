@@ -13,7 +13,8 @@ en:
     enter: "Login"
     register: "Registration"
     confirm_exit: "Are you sure to logout?"
-    
+    admin: "Admin"
+    guru: "Guru" 
   form:
     create_resource: "Create %{resource}"
     edit_resource: "Edit %{resource}"
@@ -85,11 +86,6 @@ en:
         title: "Test %{test_title}"
         question_list: "Questions list"
 
-    header:
-      title: "Administration panel"
-      main_link: "Аdmin TestGuru"
-      welcome: "Welcome, administrator %{name}!"
-
   users:
     sessions:
       create:
@@ -122,7 +118,8 @@ en:
 
     header:
       main_link: "TestGuru"
-      welcome: "Welcome, guru %{name}!"
+      admin_link: "Administration panel"
+      welcome: "Welcome, %{role} %{name}!"
 
     footer:
       author: "Project author: Pavel Golenkov"
