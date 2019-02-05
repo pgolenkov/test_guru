@@ -15,6 +15,9 @@ ru:
     confirm_exit: "Вы действительно хотите выйти?"
     admin: "Админ"
     guru: "Гуру"
+  navlinks:
+    tests: "Перейти к тестам"
+    gists: "Перейти к Gists"
   form:
     create_resource: "Создать %{resource}"
     edit_resource: "Изменить %{resource}"
@@ -45,6 +48,10 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         remember_me: "Запомнить меня"
+      gist:
+        question_id: "Вопрос"
+        user_id: "Пользователь"
+        url: "Ссылка на Gist"
 
     errors:
       models:
@@ -85,6 +92,9 @@ ru:
       show:
         title: "Тест %{test_title}"
         question_list: "Список вопросов"
+    gists:
+      index:
+        title: "Список созданных Gist"
 
   users:
     sessions:
@@ -108,7 +118,11 @@ ru:
       question_from: "Вопрос из"
       answer_variants: "Варианты ответов:"
       next: "Следующий вопрос"
-  
+      create_gist: "Создать Gist"
+    gist:
+      success: "Gist успешно создан: %{url}"
+      failure: "Произошла ошибка при создании Gist"
+
   shared:
     errors:
       title:
@@ -125,3 +139,6 @@ ru:
       author: "Автор проекта: Павел Голенков"
       description: "Проект TestGuru позволяет проводить тестирование пользователей.  Система автоматически проверяет правильность ответов и указывает на ошибки."
       school_link: "Учебный проект в онлайн-школе Thinknetica"
+  services:
+    gist_question_service:
+      description: "Вопрос теста %{test} от TestGuru"

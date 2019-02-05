@@ -7,7 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
-admin = User.create(email: 'admin@test_guru.ru', name: 'Администратор')
+admin = Admin.create(
+  email: 'admin@test_guru.ru',
+  password: '123456',
+  first_name: 'Администратор',
+  last_name: 'Системы'
+)
 
 back, front, devops = %w[backend frontend devops].map { |title| Category.create(title: title) }
 tests = Test.create([{ title: 'Ruby', level: 0, category: back, owner: admin },

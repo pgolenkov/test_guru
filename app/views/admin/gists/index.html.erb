@@ -1,0 +1,21 @@
+<div>
+  <%= link_to t("navlinks.tests"), admin_tests_path %>
+</div>
+
+<div class="row text-center">
+  <div class="col">
+    <h1><%= t(".title") %></h1>
+  </div>
+</div>
+<div class="row font-weight-bold text-center align-items-center">
+  <div class="col-3">
+    <%= Gist.human_attribute_name(:question_id) %>
+  </div>
+  <div class="col-7">
+    <%= Gist.human_attribute_name(:url) %>
+  </div>
+  <div class="col-2">
+    <%= Gist.human_attribute_name(:user_id) %>
+  </div>
+</div>
+<%= render @gists %>
