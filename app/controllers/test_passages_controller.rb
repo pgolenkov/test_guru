@@ -1,10 +1,21 @@
 class TestPassagesController < ApplicationController
-  before_action :find_test_passage, only: [:show, :result, :update]
+  before_action :find_test_passage, only: [:show, :result, :gist, :update]
 
   def show
   end
 
   def result
+  end
+
+  def gist
+    result = GistQuestionService.new(@test_passage.current_question).call
+    gist_url = result && result[:html_url]
+    if gist_url.present?
+      current_user.gists.create(question: @test_passage.current_question, url: gist_url)
+      redirect_to @test_passage, notice: t(".success", url: gist_url)
+    else
+      redirect_to @test_passage, alert: t(".failure")
+    end
   end
 
   def update

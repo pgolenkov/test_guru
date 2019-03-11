@@ -7,10 +7,10 @@
 </h1>
 <div>
   <p>
-    <b><%= @test_passage.current_question.number %> 
+    <b><%= @test_passage.current_question.number %>
     <%= t(".question_from") %>
     <%= @test_passage.test.questions.count %>:</b>
- 
+
     <%= @test_passage.current_question.body %>
   <p>
     <%= t(".answer_variants") %>
@@ -22,7 +22,6 @@
       <%= b.check_box id: "answer_ids_#{b.object_id}" %>
       <%= b.label %>
   <% end %>
-  <p>
-    <%= f.submit t(".next") %>
+  <p><%= link_to t(".create_gist"), gist_test_passage_path(@test_passage), method: :post %></p>
+  <p><%= f.submit t(".next") %></p>
 <% end %>
-

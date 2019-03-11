@@ -1,0 +1,5 @@
+<div class="row mt-2 align-items-center">
+  <div class="col-3"><%= link_to gist.question.body.truncate(25), [:admin, gist.question] %></div>
+  <div class="col-7"><%= link_to gist.url, gist.url, target: '_blank' %></div>
+  <div class="col-2"><%= gist.user.email %></div>
+</div>
