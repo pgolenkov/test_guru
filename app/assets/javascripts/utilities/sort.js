@@ -5,9 +5,9 @@ document.addEventListener("turbolinks:load", function() {
 })
 
 function sortRowsByTitle() {
-  var table = document.querySelector("table")
+  var table = document.querySelector(".table")
 
-  var rows = table.querySelectorAll("tr")
+  var rows = table.querySelectorAll(".row")
   var sortedRows = []
 
   for (var i = 1; i < rows.length; i++) {
@@ -27,7 +27,7 @@ function sortRowsByTitle() {
     arrowDown.classList.remove("hide")
   }
 
-  var sortedTable = document.createElement("table")
+  var sortedTable = document.createElement("div")
   sortedTable.classList.add("table")
   sortedTable.appendChild(rows[0])
 
@@ -39,8 +39,8 @@ function sortRowsByTitle() {
 }
 
 function compareRowsAsc(row1, row2) {
-  var testTitle1 = row1.querySelector("td").textContent;
-  var testTitle2 = row2.querySelector("td").textContent;
+  var testTitle1 = row1.querySelector(".title").textContent;
+  var testTitle2 = row2.querySelector(".title").textContent;
 
   if (testTitle1 < testTitle2) { return -1 }
   if (testTitle1 > testTitle2) { return 1 }
@@ -48,8 +48,8 @@ function compareRowsAsc(row1, row2) {
 }
 
 function compareRowsDesc(row1, row2) {
-  var testTitle1 = row1.querySelector("td").textContent;
-  var testTitle2 = row2.querySelector("td").textContent;
+  var testTitle1 = row1.querySelector(".title").textContent;
+  var testTitle2 = row2.querySelector(".title").textContent;
 
   if (testTitle1 < testTitle2) { return 1 }
   if (testTitle1 > testTitle2) { return -1 }

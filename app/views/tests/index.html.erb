@@ -3,15 +3,20 @@
     <h1><%= t(".title") %></h1>
   </div>
 </div>
-<div class="row font-weight-bold text-center align-items-center">
-  <div class="col-6">
-    <%= Test.human_attribute_name(:title) %>
+
+<div class="table">
+  <div class="row font-weight-bold text-center align-items-center">
+    <div class="col-6 sort-by-title pointer">
+      <%= Test.human_attribute_name(:title) %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </div>
+    <div class="col-2">
+      <%= t(".questions_count") %>
+    </div>
+    <div class="col-1">
+      <%= t("titles.actions") %>
+    </div>
   </div>
-  <div class="col-2">  
-    <%= t(".questions_count") %>
-  </div>
-  <div class="col-1">
-    <%= t("titles.actions") %>
-  </div>
+  <%= render @tests %>
 </div>
-<%= render @tests %>
