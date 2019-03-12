@@ -92,6 +92,8 @@ en:
       show:
         title: "Test %{test_title}"
         question_list: "Questions list"
+      form_inline:
+        submit: "OK"      
     gists:
       index:
         title: "Gists list"

@@ -1,7 +1,19 @@
 <div class="row mt-2 align-items-center">
-  <div class="col-6 title"><%= test.title %></div>
+  <div class="col-6 title">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
+  </div>
   <div class="col-2 text-center"><%= test.questions.count %></div>
   <div class="col-1 text-center"><%= link_to t("titles.show"), [:admin, test] %></div>
-  <div class="col-1 text-center"><%= link_to t("titles.edit"), edit_admin_test_path(test) %></div>
-  <div class="col-1 text-center"><%= link_to t("titles.delete"), [:admin, test], method: :delete, data: { confirm: t("titles.confirm_deletion") } %></div>
+  <div class="col-1 text-center">
+    <%= link_to t("titles.edit"),
+                edit_admin_test_path(test),
+                data: { test_id: test.id },
+                class: 'form-inline-link' %>
+  </div>
+  <div class="col-1 text-center">
+    <%= link_to t("titles.delete"),
+                [:admin, test], method: :delete,
+                data: { confirm: t("titles.confirm_deletion") } %>
+  </div>
 </div>
