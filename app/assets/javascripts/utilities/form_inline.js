@@ -1,16 +1,18 @@
 document.addEventListener("turbolinks:load", function() {
   var controls = document.querySelectorAll('.form-inline-link')
 
-  controls.forEach(function(control) {
-    control.addEventListener("click", formInlineLinkHandler)
-  })
+  if (controls && controls.length > 0) {
+    controls.forEach(function(control) {
+      control.addEventListener("click", formInlineLinkHandler)
+    })
 
-  var errors = document.querySelector('.resource-errors')
+    var errors = document.querySelector('.resource-errors')
 
-  if (errors) {
-    var resourceId = errors.dataset.resourceId
-    formInlineHandler(resourceId)
-  } 
+    if (errors) {
+      var resourceId = errors.dataset.resourceId
+      formInlineHandler(resourceId)
+    }
+  }
 })
 
 function formInlineLinkHandler(event) {

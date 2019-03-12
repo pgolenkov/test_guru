@@ -10,6 +10,10 @@
     <%= Test.human_attribute_name(:category_id) %>: <%= @test.category.title %>
 </div>
 
+<h3>
+  <%= link_to t("titles.edit"), edit_admin_test_path(@test) %>
+</h3>
+
 <h2><%= t(".question_list") %></h2>
 <table>
   <tr>
@@ -17,7 +21,7 @@
     <th colspan="3"><%= t("titles.actions") %></th>
   </tr>
   <%= render @test.questions %>
-</table> 
+</table>
 
 <h3>
   <%= link_to t("titles.create", resource: Question.model_name.human), new_admin_test_question_path(@test) %>
