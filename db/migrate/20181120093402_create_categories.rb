@@ -5,5 +5,8 @@ class CreateCategories < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    change_table :tests do |t|
+      t.references :category, foreign_key: true
+    end
   end
 end
