@@ -1,9 +1,11 @@
-<% if resource.errors.present? %>
-  <div>
-    <%= t(".title", count: resource.errors.count) %>
-  </div>
+<% if resource.present? && resource.errors.present? %>
+  <%= content_tag :div, class: 'resource-errors', data: { resource_id: resource.id } do %>
+    <div>
+      <h3><%= t(".title", count: resource.errors.count) %></h3>
+    </div>
 
-  <% resource.errors.full_messages.each do |msg| %>
-    <div><%= msg %></div>
+    <% resource.errors.full_messages.each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
   <% end %>
 <% end %>

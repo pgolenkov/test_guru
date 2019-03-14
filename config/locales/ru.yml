@@ -92,6 +92,8 @@ ru:
       show:
         title: "Тест %{test_title}"
         question_list: "Список вопросов"
+      form_inline:
+        submit: "ОК"
     gists:
       index:
         title: "Список созданных Gist"

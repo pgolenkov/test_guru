@@ -1,8 +1,8 @@
 class Admin::TestsController < Admin::ApplicationController
-  before_action :find_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_tests, only: [:index, :update_inline]
+  before_action :find_test, only: [:show, :edit, :update, :update_inline, :destroy]
 
   def index
-    @tests = Test.all
   end
 
   def show
@@ -32,12 +32,24 @@ class Admin::TestsController < Admin::ApplicationController
     end
   end
 
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
+  end
+
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: t(".success", title: @test.title)
   end
 
   private
+
+  def set_tests
+    @tests = Test.all
+  end
 
   def find_test
     @test = Test.find(params[:id])
