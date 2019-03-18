@@ -93,7 +93,7 @@ en:
         title: "Test %{test_title}"
         question_list: "Questions list"
       form_inline:
-        submit: "OK"      
+        submit: "OK"
     gists:
       index:
         title: "Gists list"
@@ -125,6 +125,21 @@ en:
       success: "Gist created successfully: %{url}"
       failure: "Creating Gist ended with error"
 
+  messages:
+    new:
+      header: "Feedback form"
+      title: "Title"
+      body: "Feedback body"
+      send: "Send"
+    feedback:
+      success: "Feedback sended successfully to administrators"
+
+  application_mailer:
+    feedback:
+      subject: "Feedback from TestGuru"
+      header: "Title of message: '%{title}'"
+      wrote: "wrote"
+
   shared:
     errors:
       title:
@@ -136,6 +151,7 @@ en:
       main_link: "TestGuru"
       admin_link: "Administration panel"
       welcome: "Welcome, %{role} %{name}!"
+      feedback: "Feedback"
 
     footer:
       author: "Project author: Pavel Golenkov"

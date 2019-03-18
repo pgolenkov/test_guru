@@ -1,9 +1,9 @@
 <nav class="navbar <%= admin? ? 'navbar-dark bg-dark' : 'navbar-light bg-light' %>">
   <%= link_to t(".main_link"), root_path, class: "navbar-brand" %>
-  
+
   <% if admin? %>
     <ul class="navbar-nav justify-content-start">
-      <li class="nav-item"> 
+      <li class="nav-item">
         <%= link_to t(".admin_link"), admin_tests_path, class: "nav-link" %>
       </li>
     </ul>
@@ -11,12 +11,15 @@
 
   <ul class="nav justify-content-end">
     <% if user_signed_in? %>
-      <li class="nav-item"> 
+      <li class="nav-item">
         <span class="navbar-text">
           <%= t(".welcome", role: role(current_user), name: current_user.name) %>
         </span>
       </li>
-      <li class="nav-item"> 
+      <li class="nav-item">
+        <%= link_to t(".feedback"), new_message_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
         <%= link_to t("titles.exit"), logout_path, method: :delete, data: { confirm: t("titles.confirm_exit") }, class: "nav-link" %>
       </li>
     <% else %>

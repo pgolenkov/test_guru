@@ -1,0 +1,22 @@
+<div>
+  <%= link_to t("titles.back"), tests_path %>
+</div>
+
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+
+    <h2><%= t(".header") %></h2>
+
+    <%= form_with url: feedback_messages_path, local: true do |f| %>
+      <div class="form-group">
+        <%= f.label :title, t(".title") %><br>
+        <%= f.text_field :title, id: :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body, t(".body") %><br>
+        <%= f.text_area :body, id: :body, class: 'form-control' %>
+      </div>
+      <%= f.submit t(".send"), class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

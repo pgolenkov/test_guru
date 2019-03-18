@@ -25,10 +25,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :messages, only: :new do
+    post :feedback, on: :collection
+  end
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member
-      
+
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: [:index, :show]
       end

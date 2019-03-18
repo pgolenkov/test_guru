@@ -125,6 +125,21 @@ ru:
       success: "Gist успешно создан: %{url}"
       failure: "Произошла ошибка при создании Gist"
 
+  messages:
+    new:
+      header: "Форма обратной связи"
+      title: "Заголовок"
+      body: "Текст обращения"
+      send: "Отправить"
+    feedback:
+      success: "Обращение успешно отправлено администраторам"
+
+  application_mailer:
+    feedback:
+      subject: "Обращение с сайта TestGuru"
+      header: "Заголовок сообщения: '%{title}'"
+      wrote: "написал"
+
   shared:
     errors:
       title:
@@ -136,6 +151,7 @@ ru:
       main_link: "TestGuru"
       admin_link: "Панель администратора"
       welcome: "Добро пожаловать, %{role} %{name}!"
+      feedback: "Обратная связь"
 
     footer:
       author: "Автор проекта: Павел Голенков"
