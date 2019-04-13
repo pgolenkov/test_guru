@@ -18,6 +18,7 @@ en:
   navlinks:
     tests: "Go to Tests"
     gists: "Go to Gists"
+    badges: "Go to Badges"
   form:
     create_resource: "Create %{resource}"
     edit_resource: "Edit %{resource}"
@@ -30,6 +31,8 @@ en:
       question: "question"
       answer: "answer"
       user: "user"
+      badge: "badge"
+      badge_rule: "badge rule"
 
     attributes:
       test:
@@ -52,6 +55,9 @@ en:
         question_id: "Question"
         user_id: "User"
         url: "Url for Gist"
+      badge:
+        name: "Name"
+        image: "Image"
 
     errors:
       models:
@@ -94,6 +100,17 @@ en:
         question_list: "Questions list"
       form_inline:
         submit: "OK"
+    badges:
+      create:
+        success: "Badge %{title} was created!"
+      update:
+        success: "Badge was updated!"
+      destroy:
+        success: "Badge %{title} was destroyed"
+      index:
+        title: "Badges list"
+      show:
+        title: "Badge %{badge_name}"
     gists:
       index:
         title: "Gists list"

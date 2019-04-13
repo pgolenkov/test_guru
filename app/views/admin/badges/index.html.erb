@@ -1,0 +1,30 @@
+<div>
+  <%= link_to t("navlinks.tests"), admin_tests_path %>
+</div>
+
+<div class="row text-center">
+  <div class="col">
+    <h1><%= t(".title") %></h1>
+  </div>
+</div>
+
+<%= render "shared/errors", resource: @badge %>
+
+<div class="table">
+  <div class="row font-weight-bold text-center align-items-center">
+    <div class="col-2">
+      <%= Badge.human_attribute_name(:image) %>
+    </div>
+    <div class="col-6">
+      <%= Badge.human_attribute_name(:name) %>
+    </div>
+    <div class="col-3">
+      <%= t("titles.actions") %>
+    </div>
+  </div>
+  <%= render @badges %>
+</div>
+
+<h3>
+  <%= link_to t("titles.create", resource: Badge.model_name.human), new_admin_badge_path %>
+</h3>

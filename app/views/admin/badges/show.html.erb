@@ -1,0 +1,17 @@
+<div>
+  <%= link_to t("titles.back"), admin_badges_path %>
+</div>
+
+<h1><%= t(".title", badge_name: @badge.name) %></h1>
+<div>
+  <%= image_tag @badge.image %>
+</div>
+
+<h3>
+  <%= link_to t("titles.edit"), edit_admin_badge_path(@badge) %>
+</h3>
+
+<h2><%= t(".badge_rule") %></h2>
+<div>
+  <%= @badge.badge_rule %>
+</div>
