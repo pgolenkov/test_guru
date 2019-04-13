@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_093116) do
+ActiveRecord::Schema.define(version: 2019_04_13_140915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 2019_04_13_093116) do
     t.bigint "badge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "kind", default: 0
+    t.integer "category_id"
+    t.integer "test_id"
+    t.integer "level"
     t.index ["badge_id"], name: "index_badge_rules_on_badge_id"
   end
 
@@ -116,7 +120,6 @@ ActiveRecord::Schema.define(version: 2019_04_13_093116) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "badge_rules", "badges"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
