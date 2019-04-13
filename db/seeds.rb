@@ -8,14 +8,14 @@
 #
 
 admin = Admin.create(
-  email: 'admin@test_guru.ru',
+  email: 'admin@testguru.ru',
   password: '123456',
   first_name: 'Администратор',
   last_name: 'Системы'
 )
 
 back, front, devops = %w[backend frontend devops].map { |title| Category.create(title: title) }
-tests = Test.create([{ title: 'Ruby', level: 0, category: back, owner: admin },
+tests = Test.create([{ title: 'Ruby', level: 1, category: back, owner: admin },
                      { title: 'PHP', level: 2, category: back, owner: admin },
                      { title: 'AngularJS', level: 3, category: front, owner: admin },
                      { title: 'CSS', level: 2, category: front, owner: admin },
