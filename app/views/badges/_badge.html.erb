@@ -1,0 +1,8 @@
+<div class="row mt-2 align-items-center text-center">
+  <div class="col-2 badge-image">
+    <%= image_tag badge.image %>
+  </div>
+  <div class="col-3"><%= badge.name %></div>
+  <div class="col-4"><%= badge.badge_rule.name %></div>
+  <div class="col-1"><%= badge.user_badges.where(user: current_user).count %></div>
+</div>

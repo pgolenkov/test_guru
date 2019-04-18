@@ -128,6 +128,11 @@ en:
       title: "Tests list"
       questions_count: "Questions count"
 
+  badges:
+    index:
+      title: "Available badges"
+      badge_count: "My badges count"
+
   test_passages:
     result:
       title: "Test %{test_title} completed!"
@@ -171,6 +176,7 @@ en:
       admin_link: "Administration panel"
       welcome: "Welcome, %{role} %{name}!"
       feedback: "Feedback"
+      badges: "Badges"
 
     footer:
       author: "Project author: Pavel Golenkov"

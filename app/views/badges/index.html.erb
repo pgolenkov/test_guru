@@ -1,5 +1,5 @@
 <div>
-  <%= link_to t("navlinks.tests"), admin_tests_path %>
+  <%= link_to t("navlinks.tests"), tests_path %>
 </div>
 
 <div class="row text-center">
@@ -7,8 +7,6 @@
     <h1><%= t(".title") %></h1>
   </div>
 </div>
-
-<%= render "shared/errors", resource: @badge %>
 
 <div class="table">
   <div class="row font-weight-bold text-center align-items-center">
@@ -21,13 +19,9 @@
     <div class="col-4">
       <%= Badge.human_attribute_name(:badge_rule_id) %>
     </div>
-    <div class="col-3">
-      <%= t("titles.actions") %>
+    <div class="col-1">
+      <%= t(".badge_count") %>
     </div>
   </div>
   <%= render @badges %>
 </div>
-
-<h3>
-  <%= link_to t("titles.create", resource: Badge.model_name.human), new_admin_badge_path %>
-</h3>

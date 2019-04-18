@@ -128,6 +128,11 @@ ru:
       title: "Список тестов"
       questions_count: "Количество вопросов"
 
+  badges:
+    index:
+      title: "Доступные бейджи"
+      badge_count: "Количество полученных мной"
+
   test_passages:
     result:
       title: "Тест %{test_title} завершен!"
@@ -171,6 +176,7 @@ ru:
       admin_link: "Панель администратора"
       welcome: "Добро пожаловать, %{role} %{name}!"
       feedback: "Обратная связь"
+      badges: "Бейджи"
 
     footer:
       author: "Автор проекта: Павел Голенков"
