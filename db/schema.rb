@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_140915) do
+ActiveRecord::Schema.define(version: 2019_04_14_060242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,14 +25,13 @@ ActiveRecord::Schema.define(version: 2019_04_13_140915) do
   end
 
   create_table "badge_rules", force: :cascade do |t|
-    t.bigint "badge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "kind", default: 0
     t.integer "category_id"
     t.integer "test_id"
     t.integer "level"
-    t.index ["badge_id"], name: "index_badge_rules_on_badge_id"
+    t.string "name"
   end
 
   create_table "badges", force: :cascade do |t|
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_140915) do
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "badge_rule_id"
   end
 
   create_table "categories", force: :cascade do |t|

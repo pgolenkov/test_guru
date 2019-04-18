@@ -11,7 +11,7 @@
   <%= link_to t("titles.edit"), edit_admin_badge_path(@badge) %>
 </h3>
 
-<h2><%= t(".badge_rule") %></h2>
 <div>
-  <%= @badge.badge_rule %>
+  <%= Badge.human_attribute_name(:badge_rule_id) %>:
+  <%= @badge.badge_rule.name %>
 </div>

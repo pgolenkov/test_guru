@@ -5,6 +5,8 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    @gotten_badges = Badge.where(id: flash[:gotten_badge_ids])
+    flash.delete(:gotten_badge_ids)
   end
 
   def gist
@@ -21,6 +23,9 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids].to_a.map(&:to_i))
     if @test_passage.completed?
+      gotten_badges = BadgeCheckService.new(@test_passage).call
+      gotten_badges.each { |badge| current_user.user_badges.create(badge: badge) }
+      flash[:gotten_badge_ids] = gotten_badges.map(&:id)
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

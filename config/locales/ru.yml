@@ -58,6 +58,7 @@ ru:
       badge:
         name: "Название"
         image: "Картинка"
+        badge_rule_id: "Правило получения"
 
     errors:
       models:
@@ -132,6 +133,7 @@ ru:
       title: "Тест %{test_title} завершен!"
       success: "Тест успешно пройден. Процент успеха"
       fail: "Тест не пройден. Процент успеха"
+      you_got_badges: "Вы получили бейджи!"
     show:
       title: "Тест %{test_title}"
       question_from: "Вопрос из"

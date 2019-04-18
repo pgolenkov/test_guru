@@ -7,9 +7,17 @@
 <%= render 'shared/errors', resource: @badge %>
 
 <%= form_with model: [:admin, @badge], local: true do |f| %>
+  <p>
   <%= f.label :name %>
   <%= f.text_field :name, id: :badge_name %>
+  </p>
+  <p>
   <%= f.label :image %>
   <%= f.text_field :image, id: :badge_image %>
+  </p>
+  <p>
+  <%= f.label :badge_rule_id %>
+  <%= f.select :badge_rule_id, BadgeRule.all.map { |r| [r.name, r.id] }, {}, id: :badge_image %>
+  </p>
   <%= f.submit %>
 <% end %>

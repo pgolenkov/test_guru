@@ -1,5 +1,5 @@
 class Badge < ApplicationRecord
-  has_one :badge_rule, dependent: :destroy
+  belongs_to :badge_rule
   has_many :user_badges, dependent: :destroy
 
   validates :name, :image, presence: true

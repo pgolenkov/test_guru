@@ -58,6 +58,7 @@ en:
       badge:
         name: "Name"
         image: "Image"
+        badge_rule_id: "Rule to get"
 
     errors:
       models:
@@ -132,6 +133,7 @@ en:
       title: "Test %{test_title} completed!"
       success: "Test completed successfully. Success percent"
       fail: "Test failed. Success percent"
+      you_got_badges: "You got badges!"
     show:
       title: "Test %{test_title}"
       question_from: "Question from"

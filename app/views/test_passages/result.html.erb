@@ -4,14 +4,23 @@
 
 <h1><%= t(".title", test_title: @test_passage.test.title) %></h1>
 
-<h2 class="test_passage_result">
-  <% if @test_passage.success? %>
+<% if @test_passage.success? %>
+  <h2 class="test_passage_result">
     <%= t(".success") %>
     <span class="success"><%= @test_passage.success_percent %>%</span>
-  <% else %>
+  </h2>
+  <% unless @gotten_badges.empty? %>
+    <h3><%= t(".you_got_badges") %></h3>
+    <% @gotten_badges.each do |badge| %>
+      <div class="badge-image">
+        <%= image_tag badge.image %>
+        <%= badge.name %>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <h2 class="test_passage_result">
     <%= t(".fail") %>
     <span class="fail"><%= @test_passage.success_percent %>%</span>
-  <% end %>
-</h2>
-
-
+  </h2>
+<% end %>
