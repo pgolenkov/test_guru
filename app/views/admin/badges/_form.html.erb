@@ -1,0 +1,23 @@
+<div>
+  <%= link_to t("titles.back"), admin_badges_path %>
+</div>
+
+<h1><%= resource_header(@badge) %></h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<%= form_with model: [:admin, @badge], local: true do |f| %>
+  <p>
+  <%= f.label :name %>
+  <%= f.text_field :name, id: :badge_name %>
+  </p>
+  <p>
+  <%= f.label :image %>
+  <%= f.text_field :image, id: :badge_image %>
+  </p>
+  <p>
+  <%= f.label :rule_id %>
+  <%= f.select :rule_id, BadgeRule.pluck(:name, :id), {}, id: :badge_rule_id %>
+  </p>
+  <%= f.submit %>
+<% end %>

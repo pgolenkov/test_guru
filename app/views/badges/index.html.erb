@@ -1,0 +1,27 @@
+<div>
+  <%= link_to t("navlinks.tests"), tests_path %>
+</div>
+
+<div class="row text-center">
+  <div class="col">
+    <h1><%= t(".title") %></h1>
+  </div>
+</div>
+
+<div class="table">
+  <div class="row font-weight-bold text-center align-items-center">
+    <div class="col-2">
+      <%= Badge.human_attribute_name(:image) %>
+    </div>
+    <div class="col-3">
+      <%= Badge.human_attribute_name(:name) %>
+    </div>
+    <div class="col-4">
+      <%= Badge.human_attribute_name(:rule_id) %>
+    </div>
+    <div class="col-1">
+      <%= t(".badge_count") %>
+    </div>
+  </div>
+  <%= render @badges %>
+</div>

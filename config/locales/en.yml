@@ -18,6 +18,7 @@ en:
   navlinks:
     tests: "Go to Tests"
     gists: "Go to Gists"
+    badges: "Go to Badges"
   form:
     create_resource: "Create %{resource}"
     edit_resource: "Edit %{resource}"
@@ -30,6 +31,8 @@ en:
       question: "question"
       answer: "answer"
       user: "user"
+      badge: "badge"
+      badge_rule: "badge rule"
 
     attributes:
       test:
@@ -52,6 +55,10 @@ en:
         question_id: "Question"
         user_id: "User"
         url: "Url for Gist"
+      badge:
+        name: "Name"
+        image: "Image"
+        rule_id: "Rule to get"
 
     errors:
       models:
@@ -94,6 +101,17 @@ en:
         question_list: "Questions list"
       form_inline:
         submit: "OK"
+    badges:
+      create:
+        success: "Badge %{title} was created!"
+      update:
+        success: "Badge was updated!"
+      destroy:
+        success: "Badge %{title} was destroyed"
+      index:
+        title: "Badges list"
+      show:
+        title: "Badge %{badge_name}"
     gists:
       index:
         title: "Gists list"
@@ -110,11 +128,17 @@ en:
       title: "Tests list"
       questions_count: "Questions count"
 
+  badges:
+    index:
+      title: "Available badges"
+      badge_count: "My badges count"
+
   test_passages:
     result:
       title: "Test %{test_title} completed!"
       success: "Test completed successfully. Success percent"
       fail: "Test failed. Success percent"
+      you_got_badges: "You got badges!"
     show:
       title: "Test %{test_title}"
       question_from: "Question from"
@@ -152,6 +176,7 @@ en:
       admin_link: "Administration panel"
       welcome: "Welcome, %{role} %{name}!"
       feedback: "Feedback"
+      badges: "Badges"
 
     footer:
       author: "Project author: Pavel Golenkov"
