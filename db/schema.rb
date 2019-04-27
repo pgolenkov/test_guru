@@ -28,9 +28,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_060242) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "kind", default: 0
-    t.integer "category_id"
-    t.integer "test_id"
-    t.integer "level"
+    t.integer "value"
     t.string "name"
   end
 
@@ -39,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_060242) do
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "badge_rule_id"
+    t.integer "rule_id"
   end
 
   create_table "categories", force: :cascade do |t|

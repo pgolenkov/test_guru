@@ -3,7 +3,7 @@
     <%= image_tag badge.image %>
   </div>
   <div class="col-3"><%= badge.name %></div>
-  <div class="col-4"><%= badge.badge_rule.name %></div>
+  <div class="col-4"><%= badge.rule.name %></div>
   <div class="col-1"><%= link_to t("titles.show"), [:admin, badge] %></div>
   <div class="col-1">
     <%= link_to t("titles.edit"), edit_admin_badge_path(badge) %>

@@ -16,8 +16,8 @@
   <%= f.text_field :image, id: :badge_image %>
   </p>
   <p>
-  <%= f.label :badge_rule_id %>
-  <%= f.select :badge_rule_id, BadgeRule.all.map { |r| [r.name, r.id] }, {}, id: :badge_image %>
+  <%= f.label :rule_id %>
+  <%= f.select :rule_id, BadgeRule.pluck(:name, :id), {}, id: :badge_rule_id %>
   </p>
   <%= f.submit %>
 <% end %>

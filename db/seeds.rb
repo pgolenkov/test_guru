@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
-admin = Admin.create(
+admin = Admin.find_by(email: 'admin@testguru.ru') || Admin.create(
   email: 'admin@testguru.ru',
   password: '123456',
   first_name: 'Администратор',
@@ -66,9 +66,9 @@ answers = Answer.create(
 badge_rules = BadgeRule.create(
   [
     { name: 'Успешное прохождение любого теста', kind: :specific_test },
-    { name: 'Успешное прохождение теста Ruby', kind: :specific_test, test: tests[0] },
-    { name: 'Успешное прохождение всех тестов frontend', kind: :all_tests_in_category, category: front },
-    { name: 'Успешное прохождение всех тестов 1 уровня', kind: :all_tests_in_level, level: 1 },
-    { name: 'Успешное прохождение теста AngularJS с первой попытки', kind: :first_try, test: tests[2] }
+    { name: 'Успешное прохождение теста Ruby', kind: :specific_test, value: tests[0].id },
+    { name: 'Успешное прохождение всех тестов frontend', kind: :all_tests_in_category, value: front.id },
+    { name: 'Успешное прохождение всех тестов 1 уровня', kind: :all_tests_in_level, value: 1 },
+    { name: 'Успешное прохождение теста AngularJS с первой попытки', kind: :first_try, value: tests[2].id }
   ]
 )

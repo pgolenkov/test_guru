@@ -1,9 +1,6 @@
 class BadgeRule < ApplicationRecord
   has_many :badge
 
-  belongs_to :test, optional: true
-  belongs_to :category, optional: true
-
   validates :name, presence: true, uniqueness: true
 
   enum kind: {

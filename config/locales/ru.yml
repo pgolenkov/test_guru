@@ -58,7 +58,7 @@ ru:
       badge:
         name: "Название"
         image: "Картинка"
-        badge_rule_id: "Правило получения"
+        rule_id: "Правило получения"
 
     errors:
       models:

@@ -1,8 +1,8 @@
 class Admin::BadgesController < ApplicationController
-  before_action :set_badges, only: :index
   before_action :find_badge, only: [:show, :edit, :update, :destroy]
 
   def index
+    @badges = Badge.all
   end
 
   def show
@@ -33,21 +33,20 @@ class Admin::BadgesController < ApplicationController
   end
 
   def destroy
-    @badge.destroy
-    redirect_to admin_badges_path, notice: t(".success", title: @badge.name)
+    if @badge.destroy
+      redirect_to admin_badges_path, notice: t(".success", title: @badge.name)
+    else
+      redirect_to admin_badges_path, alert: t(".error", title: @badge.errors.messages.join)
+    end
   end
 
   private
-
-  def set_badges
-    @badges = Badge.all
-  end
 
   def find_badge
     @badge = Badge.find(params[:id])
   end
 
   def badge_params
-    params.require(:badge).permit(:name, :image, :badge_rule_id)
+    params.require(:badge).permit(:name, :image, :rule_id)
   end
 end

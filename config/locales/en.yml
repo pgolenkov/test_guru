@@ -58,7 +58,7 @@ en:
       badge:
         name: "Name"
         image: "Image"
-        badge_rule_id: "Rule to get"
+        rule_id: "Rule to get"
 
     errors:
       models:

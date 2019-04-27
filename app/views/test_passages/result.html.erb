@@ -11,12 +11,7 @@
   </h2>
   <% unless @gotten_badges.empty? %>
     <h3><%= t(".you_got_badges") %></h3>
-    <% @gotten_badges.each do |badge| %>
-      <div class="badge-image">
-        <%= image_tag badge.image %>
-        <%= badge.name %>
-      </div>
-    <% end %>
+    <%= render partial: 'badge', collection: @gotten_badges %>
   <% end %>
 <% else %>
   <h2 class="test_passage_result">
