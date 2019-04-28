@@ -6,12 +6,17 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_current_question
+  before_validation :before_validation_set_end_at, on: :create
 
   scope :in_category, -> (category) { joins(:test).where(tests: { category_id: category.id }) }
   scope :by_level, -> (level) { joins(:test).where(tests: { level: level }) }
 
   def completed?
     current_question.nil?
+  end
+
+  def time_ended?
+    end_at && Time.current > end_at
   end
 
   def accept!(answer_ids)
@@ -33,6 +38,10 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_current_question
     self.current_question = new_record? ? test.questions.first : next_question
+  end
+
+  def before_validation_set_end_at
+    self.end_at = Time.current + test.timer_minutes.minutes if test.timer_minutes.present?
   end
 
   def correct_answers?(answer_ids)

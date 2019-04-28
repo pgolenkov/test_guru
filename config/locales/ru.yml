@@ -39,6 +39,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        timer_minutes: "Отведённое время на ответ (мин)"
       question:
         body: "Текст"
       answer:
@@ -145,6 +146,7 @@ ru:
       answer_variants: "Варианты ответов:"
       next: "Следующий вопрос"
       create_gist: "Создать Gist"
+      time_remaining: "Оставшееся время"
     gist:
       success: "Gist успешно создан: %{url}"
       failure: "Произошла ошибка при создании Gist"
