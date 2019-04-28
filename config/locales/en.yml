@@ -39,6 +39,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        timer_minutes: "Time to solve (minutes)"
       question:
         body: "Body"
       answer:
@@ -145,6 +146,7 @@ en:
       answer_variants: "Answer variants:"
       next: "Next question"
       create_gist: "Create Gist"
+      time_remaining: "Time remaining"
     gist:
       success: "Gist created successfully: %{url}"
       failure: "Creating Gist ended with error"

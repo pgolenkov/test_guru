@@ -2,6 +2,7 @@ class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: [:show, :result, :gist, :update]
 
   def show
+    redirect_to result_test_passage_path(@test_passage) if @test_passage.time_ended?
   end
 
   def result

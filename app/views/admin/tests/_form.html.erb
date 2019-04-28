@@ -7,11 +7,18 @@
 <%= render 'shared/errors', resource: @test %>
 
 <%= form_with model: [:admin, @test], local: true do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, id: :test_title %>
-  <%= f.label :level %>
-  <%= f.number_field :level, id: :test_level %>
-  <%= f.label :category_id %>
-  <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true, id: :test_category_id %>
-  <%= f.submit %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title, id: :test_title %>
+  <p>
+    <%= f.label :level %>
+    <%= f.number_field :level, id: :test_level %>
+  <p>
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true, id: :test_category_id %>
+  <p>
+    <%= f.label :timer_minutes %>
+    <%= f.number_field :timer_minutes, id: :test_timer_minutes %>
+  <p>
+    <%= f.submit %>
 <% end %>

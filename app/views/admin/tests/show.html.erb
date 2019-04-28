@@ -8,6 +8,10 @@
     <%= Test.human_attribute_name(:level) %>: <%= @test.level %>
   <p>
     <%= Test.human_attribute_name(:category_id) %>: <%= @test.category.title %>
+  <% if @test.timer_minutes %>
+    <p>
+      <%= Test.human_attribute_name(:timer_minutes) %>: <%= @test.timer_minutes %>
+  <% end %>
 </div>
 
 <h3>

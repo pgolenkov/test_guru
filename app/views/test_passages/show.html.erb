@@ -6,6 +6,12 @@
   <%= t(".title", test_title: @test_passage.test.title) %>
 </h1>
 <div>
+  <% if @test_passage.end_at %>
+    <%= t(".time_remaining") %>
+    <div class="clock" data-end-at="<%= @test_passage.end_at %>" data-test-passage-id="<%= @test_passage.id %>">
+    </div>
+  <% end %>
+
   <div class="progress">
     <%= content_tag :div, class: 'progress-bar', data: {
                       number: @test_passage.current_question.number,
